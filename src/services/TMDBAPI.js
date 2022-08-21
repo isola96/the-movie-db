@@ -25,3 +25,6 @@ export const getPopular = () => {
 }
 
 // GET - Get the top rated movies on TMDB.
+export const getTopRated = () => {
+    return get(`/movie/top_rated?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&region=US&page=1`)
+}
