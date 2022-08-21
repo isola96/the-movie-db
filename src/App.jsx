@@ -3,6 +3,7 @@ import Navigation from './components/Navigation'
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
 import NowPlayingPage from './pages/NowPlayingPage'
+import PopularPage from './pages/PopularPage'
 import './assets/scss/App.scss'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/now_playing" element={<NowPlayingPage />} />
+				<Route path="/popular" element={<PopularPage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>

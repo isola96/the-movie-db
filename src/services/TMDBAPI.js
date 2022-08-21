@@ -20,4 +20,8 @@ export const getNowPlaying = () => {
 }
 
 // GET - Get a list of the current popular movies on TMDB. This list updates daily.
+export const getPopular = () => {
+    return get(`/movie/popular?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&region=US&page=1`)
+}
+
 // GET - Get the top rated movies on TMDB.
