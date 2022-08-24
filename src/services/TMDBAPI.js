@@ -28,3 +28,8 @@ export const getPopular = () => {
 export const getTopRated = () => {
     return get(`/movie/top_rated?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&region=US&page=1`)
 }
+
+// GET - Get one movie 
+export const getMovie = async (id) => {
+	return await axios.get(`/movie/${id}?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&region=US`)
+}   

@@ -1,10 +1,15 @@
 import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
+
+// Pages 
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
 import NowPlayingPage from './pages/NowPlayingPage'
 import PopularPage from './pages/PopularPage'
 import TopRatedPage from './pages/TopRatedPage'
+import MoviePage from './pages/MoviePage'
+
+//Styling
 import './assets/scss/App.scss'
 
 
@@ -18,6 +23,7 @@ function App() {
 				<Route path="/now_playing" element={<NowPlayingPage />} />
 				<Route path="/popular" element={<PopularPage />} />
 				<Route path="/top_rated" element={<TopRatedPage />} />
+				<Route path="/movie/:id" element={<MoviePage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>
