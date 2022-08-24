@@ -1,4 +1,6 @@
+import { Button } from "react-bootstrap"
 import { Card } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 const MovieDetails = ({ movie }) => {
     return (
@@ -7,13 +9,27 @@ const MovieDetails = ({ movie }) => {
             <Card className='mb-3'>
                 <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
                 <Card.Body>
-                    <Card.Text>
-                        <span>Released: {movie.release_date} </span>
-                        <span>Average rating: {movie.vote_average}</span>
-                    </Card.Text>
+                        <div>
+                            <span>Released: {movie.release_date} </span>
+                        </div>
+                        <div>
+                            <span>Average rating: {movie.vote_average}</span>
+                        </div>
+                        <div>
+                            <h3>Cast</h3>
+                            {movie.credits.cast.map(actor => (
+                                <div key={actor.id}>
+                                    <span>{actor.name}</span>
+                                    <Button
+                                        as={Link}
+                                        to={`/actor/${actor.id}`}
+                                        >Read more
+                                    </Button>
+                                </div>
+                            ))}
+                        </div>
                 </Card.Body>
             </Card> 
-
         </>
     )
 }

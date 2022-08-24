@@ -8,10 +8,10 @@ import NowPlayingPage from './pages/NowPlayingPage'
 import PopularPage from './pages/PopularPage'
 import TopRatedPage from './pages/TopRatedPage'
 import MoviePage from './pages/MoviePage'
+import ActorPage from './pages/ActorPage'
 
 //Styling
 import './assets/scss/App.scss'
-
 
 function App() {
 	return (
@@ -24,6 +24,7 @@ function App() {
 				<Route path="/popular" element={<PopularPage />} />
 				<Route path="/top_rated" element={<TopRatedPage />} />
 				<Route path="/movie/:id" element={<MoviePage />} />
+				<Route path="/actor/:id" element={<ActorPage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>

@@ -29,7 +29,12 @@ export const getTopRated = () => {
     return get(`/movie/top_rated?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&region=US&page=1`)
 }
 
-// GET - Get one movie 
-export const getMovie = async (id) => {
-	return await axios.get(`/movie/${id}?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&region=US`)
+// GET - Get one movie with actors 
+export const getMovie = (id) => {
+	return axios.get(`/movie/${id}?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&region=US&append_to_response=credits`)
 }   
+
+// GET - Get actor with id
+export const getActor = (id) => {
+    return get(`/person/${id}?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&append_to_response=credits`)
+}
