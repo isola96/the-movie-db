@@ -7,7 +7,7 @@ const NowPlayingPage = () => {
 
     return (
         <Container>
-            <h1>This is a list of movies playing in theatres in the US.</h1>
+            <h1>List of movies playing in theatres in the US.</h1>
 
             {isLoading && (<p>Loading movies...</p>)}
             {isError && (<p>ERROR {error.message}</p>)}
