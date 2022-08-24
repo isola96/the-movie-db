@@ -1,8 +1,9 @@
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import {Link} from 'react-router-dom'
 import { useQuery } from 'react-query'
 import { getNowPlaying } from '../services/TMDBAPI'
 
@@ -14,7 +15,9 @@ const NowPlayingPage = () => {
             <h1>List of movies playing in theatres in the US.</h1>
 
             {isLoading && (<p>Loading movies...</p>)}
-            {isError && (<p>ERROR {error.message}</p>)}
+
+            {isError && (<p>An error occured: {error.message}</p>)}
+            
             {data && (
                 <Row>
                     {data.results.map(movie => (
@@ -28,7 +31,9 @@ const NowPlayingPage = () => {
                                         <span>Average rating: {movie.vote_average}</span>
                                     </Card.Text>
                                     <Button 
-                                        variant="primary"
+                                        as={Link}
+                                        to={`/movie/${movie.id}`}
+                                        variant="primary"                                        
                                         >Read more
                                     </Button>
                                 </Card.Body>
