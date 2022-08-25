@@ -7,7 +7,7 @@ const PopularPage = () => {
 
     return (
         <Container>
-            <h1>List of the current popular movies on TMDB. This list updates daily.</h1>
+            <h1>List of the current popular movies on TMDB.</h1>
 
             {isLoading && (<p>Loading movies...</p>)}
             {isError && (<p>ERROR {error.message}</p>)}
