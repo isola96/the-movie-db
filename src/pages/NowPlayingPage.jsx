@@ -15,9 +15,7 @@ const NowPlayingPage = () => {
             <h1>List of movies playing in theatres in the US.</h1>
 
             {isLoading && (<p>Loading movies...</p>)}
-
             {isError && (<p>An error occured: {error.message}</p>)}
-            
             {data && (
                 <Row>
                     {data.results.map(movie => (

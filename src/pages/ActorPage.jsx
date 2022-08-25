@@ -1,6 +1,8 @@
+import { Button } from "react-bootstrap"
 import { Container } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import { Card } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import useActor from "../hooks/useActor"
 
 const ActorPage = () => {
@@ -27,6 +29,16 @@ const ActorPage = () => {
                             </div>
                             <div>
                                 <h3>Featerad in the following movies: </h3>
+                                {data.credits.cast.map(movie => (
+                                    <div key={movie.id}>
+                                        <span>{movie.name}</span>
+                                        <Button
+                                            as={Link}
+                                            to={`/movie/${movie.id}`}
+                                            >Read more
+                                        </Button>
+                                    </div>
+                                ))}
                             </div>
                         </Card.Body>
                     </Card> 
