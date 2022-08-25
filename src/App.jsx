@@ -9,6 +9,7 @@ import PopularPage from './pages/PopularPage'
 import TopRatedPage from './pages/TopRatedPage'
 import MoviePage from './pages/MoviePage'
 import ActorPage from './pages/ActorPage'
+import GenresPage from './pages/GenresPage'
 import GenrePage from './pages/GenrePage'
 
 //Styling
@@ -24,7 +25,8 @@ function App() {
 				<Route path="/now_playing" element={<NowPlayingPage />} />
 				<Route path="/popular" element={<PopularPage />} />
 				<Route path="/top_rated" element={<TopRatedPage />} />
-				<Route path="/genres" element={<GenrePage />} />
+				<Route path="/genres" element={<GenresPage />} />
+				<Route path="/genres/:id" element={<GenrePage />} />
 				<Route path="/movie/:id" element={<MoviePage />} />
 				<Route path="/actor/:id" element={<ActorPage />} />
 				<Route path="*" element={<NotFound />} />

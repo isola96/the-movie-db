@@ -38,3 +38,13 @@ export const getMovie = (id) => {
 export const getActor = (id) => {
     return get(`/person/${id}?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&append_to_response=credits`)
 }
+
+// GET - Get all genres 
+export const getGenres = () => {
+    return get(`/genre/movie/list?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US`)
+}
+
+// GET - Get one genre 
+export const getGenre = (genre) => {
+    return get(`/discover/movie?api_key=${import.meta.env.VITE_TMDB_API_KEY}&with_genres=${genre}`)
+}
