@@ -45,6 +45,6 @@ export const getGenres = () => {
 }
 
 // GET - Get one genre 
-export const getGenre = (genre) => {
-    return get(`/discover/movie?api_key=${import.meta.env.VITE_TMDB_API_KEY}&with_genres=${genre}`)
+export const getGenre = (genre, page) => {
+    return get(`/discover/movie?api_key=${import.meta.env.VITE_TMDB_API_KEY}&with_genres=${genre}&page=${page}`)
 }
