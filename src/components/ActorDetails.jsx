@@ -15,11 +15,11 @@ const ActorDetails = ({ data }) => {
 
                 <Card.Body>
                     <div>
-                        <span>Born: {data.birthday} </span>
+                        <p>Born: {data.birthday} </p>
                     </div>
 
                     <div>
-                        <span>In: {data.place_of_birth} </span>
+                        <p>In: {data.place_of_birth} </p>
                     </div>
 
                     <div>
@@ -31,17 +31,17 @@ const ActorDetails = ({ data }) => {
 
                         <Row>
                             {data.credits.cast.map(movie => (
-                                <Col key={movie.id}>
+                                <Col lg={3} md={4} sm={6} key={movie.id}>
                                     <Card className='mb-3'>
                                         <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt="movie-poster"/>
                                         <Card.Body>
                                             <Card.Title>{movie.name}</Card.Title>
                                             <div>
-                                                <span>Released: {movie.release_date} </span>
+                                                <p>Released: {movie.release_date} </p>
                                             </div>
 
                                             <div>
-                                                <span>Average rating: {movie.vote_average}</span>
+                                                <p>Average rating: {movie.vote_average}</p>
                                             </div>
 
                                             <Button

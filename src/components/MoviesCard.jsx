@@ -16,8 +16,8 @@ const MoviesCard = ({ movies }) => {
                             <Card.Body>
                                 <Card.Title>{movie.title}</Card.Title>
                                 <Card.Text>
-                                    <span>Released: {movie.release_date} </span>
-                                    <span>Average rating: {movie.vote_average}</span>
+                                    <div>Released: {movie.release_date} </div>
+                                    <div>Average Rating: {movie.vote_average}</div>
                                 </Card.Text>
                                 <Button 
                                     as={Link}
