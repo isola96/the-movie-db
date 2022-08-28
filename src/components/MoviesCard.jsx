@@ -12,7 +12,7 @@ const MoviesCard = ({ movies }) => {
                 {movies.results.map(movie => (
                     <Col lg={3} md={4} sm={6} key={movie.id}>
                         <Card className='mb-3'>
-                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
+                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt="movie-poster" />
                             <Card.Body>
                                 <Card.Title>{movie.title}</Card.Title>
                                 <Card.Text>

@@ -36,7 +36,7 @@ const ActorPage = () => {
                                 {data.credits.cast.map(movie => (
                                     <Col key={movie.id}>
                                         <Card className='mb-3'>
-                                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
+                                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt="movie-poster"/>
                                             <Card.Body>
                                                 <Card.Title>{movie.name}</Card.Title>
                                                 <div>

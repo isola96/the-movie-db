@@ -9,7 +9,7 @@ const MovieDetails = ({ movie }) => {
         <>
             <h1>{movie.title}</h1>
             <Card className='mb-3'>
-                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
+                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt="movie-poster" />
                 <Card.Body>
                         <div>
                             <span>Released: {movie.release_date} </span>
@@ -23,7 +23,7 @@ const MovieDetails = ({ movie }) => {
                                 {movie.credits.cast.map(actor => (
                                     <Col key={actor.id}>
                                         <Card className='mb-3'>
-                                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${actor.profile_path}`} />
+                                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${actor.profile_path}`} alt="actor-poster" />
                                             <Card.Body>
                                                 <Card.Title>{actor.name}</Card.Title>
                                                 <Card.Text>
