@@ -19,11 +19,15 @@ const ActorDetails = ({ data }) => {
                     </div>
 
                     <div>
-                        <p>{data.biography}</p>
+                        <span>In: {data.place_of_birth} </span>
                     </div>
 
                     <div>
-                        <h3>Featerad in the following movies: </h3>
+                        <p>Biography: {data.biography}</p>
+                    </div>
+
+                    <div>
+                        <h3>Filmography: </h3>
 
                         <Row>
                             {data.credits.cast.map(movie => (

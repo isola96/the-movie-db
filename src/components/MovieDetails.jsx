@@ -19,6 +19,9 @@ const MovieDetails = ({ movie }) => {
                             <span>Average rating: {movie.vote_average}</span>
                         </div>
                         <div>
+                            <span>Overview: {movie.overview}</span>
+                        </div>
+                        <div>
                             <h3>Cast</h3>
                             <Row>
                                 {movie.credits.cast.map(actor => (
