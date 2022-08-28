@@ -1,5 +1,7 @@
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import { Link } from "react-router-dom"
 
 const MovieDetails = ({ movie }) => {
@@ -17,16 +19,26 @@ const MovieDetails = ({ movie }) => {
                         </div>
                         <div>
                             <h3>Cast</h3>
-                            {movie.credits.cast.map(actor => (
-                                <div key={actor.id}>
-                                    <span>{actor.name}</span>
-                                    <Button
-                                        as={Link}
-                                        to={`/actor/${actor.id}`}
-                                        >Read more
-                                    </Button>
-                                </div>
-                            ))}
+                            <Row>
+                                {movie.credits.cast.map(actor => (
+                                    <Col key={actor.id}>
+                                        <Card className='mb-3'>
+                                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${actor.profile_path}`} />
+                                            <Card.Body>
+                                                <Card.Title>{actor.name}</Card.Title>
+                                                <Card.Text>
+                                                    <span>Plays: {actor.character} </span>
+                                                </Card.Text>
+                                                <Button
+                                                    as={Link}
+                                                    to={`/actor/${actor.id}`}
+                                                    >Read more
+                                                </Button>
+                                            </Card.Body>
+                                        </Card> 
+                                    </Col>
+                                ))}
+                            </Row>
                         </div>
                 </Card.Body>
             </Card> 
