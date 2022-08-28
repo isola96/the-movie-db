@@ -1,5 +1,10 @@
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
+
+import Card from 'react-bootstrap/Card'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 import { Link } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import { getGenres } from "../services/TMDBAPI"
@@ -9,7 +14,7 @@ const GenresPage = () => {
 
     return (
         <Container>
-            <h1>Genres</h1>
+            <h1 className='text-center'>Genres</h1>
 
             {isLoading && (<p>Loading movies...</p>)}
 
@@ -17,16 +22,25 @@ const GenresPage = () => {
 
             {data && (
                 <>
-                    {data.genres.map(genre => (
-                        <div key={genre.id}>
-                            <div>{genre.name}</div>
-                            <Button
-                                as={Link}
-                                to={`/genres/${genre.id}`}
-                                >Read More
-                            </Button>
-                        </div>
-                    ))}
+                    <Container>
+                        <Row>
+                            {data.genres.map(genre => (
+                                <Col key={genre.id}>
+                                    <Card className='mb-4 mt-4'>
+                                        <Card.Title className='text-center'>{genre.name}</Card.Title>
+                                        <Card.Body>
+                                            <Button
+                                                as={Link}
+                                                to={`/genres/${genre.id}`}
+                                                variant='dark'
+                                                >Read More
+                                            </Button>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            ))}
+                        </Row>
+                    </Container>
                 </>
             )}
         </Container>

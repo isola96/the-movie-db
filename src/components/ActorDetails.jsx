@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const ActorDetails = ({ data }) => {
     return (
         <Container>
-            <h1>{data.name}</h1>
+            <h1 className='text-center'>{data.name}</h1>
 
             <Card className='mb-3'>
                 <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${data.profile_path}`} alt="actor-poster" />
@@ -47,6 +47,7 @@ const ActorDetails = ({ data }) => {
                                             <Button
                                                 as={Link}
                                                 to={`/movie/${movie.id}`}
+                                                variant='dark'
                                                 >Read more
                                             </Button>
                                         </Card.Body>

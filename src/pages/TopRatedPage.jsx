@@ -8,7 +8,7 @@ const TopRatedPage = () => {
 
     return (
         <Container>
-            <h1>List of the top rated movies on TMDB.</h1>
+            <h1 className='text-center'>List of the top rated movies on TMDB.</h1>
 
             {isLoading && (<p>Loading movies...</p>)}
 

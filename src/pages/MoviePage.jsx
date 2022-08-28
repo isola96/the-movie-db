@@ -13,7 +13,11 @@ const MoviePage = () => {
 
             {isError && (<p>An error occured {error.message}</p>)}
             
-            {data && <MovieDetails movie={data.data} /> }
+            {data && (
+                <>
+                    <MovieDetails movie={data.data} />
+                </>
+            ) }
         </Container>
     )
 }

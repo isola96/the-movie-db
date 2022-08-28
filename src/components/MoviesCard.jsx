@@ -22,7 +22,7 @@ const MoviesCard = ({ movies }) => {
                                 <Button 
                                     as={Link}
                                     to={`/movie/${movie.id}`}
-                                    variant="primary"                                        
+                                    variant='dark'                                       
                                     >Read more
                                 </Button>
                             </Card.Body>

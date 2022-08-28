@@ -6,7 +6,7 @@ const Pagination = ({ page, changePage, isPreviousData }) => {
             <Button 
                 disabled={isPreviousData || page <= 1} 
                 onClick={() => changePage({ page: Number(page) - 1, })} 
-                variant='primary'
+                variant='dark'
                 >Previous
             </Button>
 
@@ -15,7 +15,7 @@ const Pagination = ({ page, changePage, isPreviousData }) => {
             <Button 
                 disabled={isPreviousData || page >= 500} 
                 onClick={() => changePage({ page: Number(page) + 1, })} 
-                variant='primary'
+                variant='dark'
                 >Next
             </Button>
         </div>

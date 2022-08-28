@@ -8,7 +8,7 @@ const NowPlayingPage = () => {
 
     return (
         <Container>
-            <h1>List of movies playing in theatres in the US.</h1>
+            <h1 className='text-center'>List of movies playing in theatres in the US.</h1>
 
             {isLoading && (<p>Loading movies...</p>)}
 
