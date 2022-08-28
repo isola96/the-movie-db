@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap"
+import Container from 'react-bootstrap/Container'
 import { useParams } from "react-router-dom"
 import useMovie from '../hooks/useMovie'
 import MovieDetails from "../components/MovieDetails"

@@ -1,6 +1,6 @@
-import { Button } from "react-bootstrap"
-import { Container } from "react-bootstrap"
-import { Card } from "react-bootstrap"
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import { Link } from "react-router-dom"
