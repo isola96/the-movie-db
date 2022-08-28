@@ -1,12 +1,13 @@
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { Link } from 'react-router-dom'
 
 const ActorDetails = ({ data }) => {
     return (
-        <>
+        <Container>
             <h1>{data.name}</h1>
 
             <Card className='mb-3'>
@@ -52,7 +53,7 @@ const ActorDetails = ({ data }) => {
                     </div>
                 </Card.Body>
             </Card> 
-        </>
+        </Container>
     )
 }
 

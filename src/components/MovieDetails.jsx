@@ -1,12 +1,13 @@
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Link } from "react-router-dom"
 
 const MovieDetails = ({ movie }) => {
     return (
-        <>
+        <Container>
             <h1>{movie.title}</h1>
             <Card className='mb-3'>
                 <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt="movie-poster" />
@@ -42,7 +43,7 @@ const MovieDetails = ({ movie }) => {
                         </div>
                 </Card.Body>
             </Card> 
-        </>
+        </Container>
     )
 }
 
