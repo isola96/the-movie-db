@@ -1,8 +1,11 @@
-import { Button } from "react-bootstrap"
-import { Container } from "react-bootstrap"
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 import { useParams } from "react-router-dom"
-import { Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
+
 import useActor from "../hooks/useActor"
 
 const ActorPage = () => {
@@ -29,16 +32,29 @@ const ActorPage = () => {
                             </div>
                             <div>
                                 <h3>Featerad in the following movies: </h3>
+                                <Row>
                                 {data.credits.cast.map(movie => (
-                                    <div key={movie.id}>
-                                        <span>{movie.name}</span>
-                                        <Button
-                                            as={Link}
-                                            to={`/movie/${movie.id}`}
-                                            >Read more
-                                        </Button>
-                                    </div>
+                                    <Col key={movie.id}>
+                                        <Card className='mb-3'>
+                                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
+                                            <Card.Body>
+                                                <Card.Title>{movie.name}</Card.Title>
+                                                <div>
+                                                    <span>Released: {movie.release_date} </span>
+                                                </div>
+                                                <div>
+                                                    <span>Average rating: {movie.vote_average}</span>
+                                                </div>
+                                                <Button
+                                                    as={Link}
+                                                    to={`/movie/${movie.id}`}
+                                                    >Read more
+                                                </Button>
+                                            </Card.Body>
+                                        </Card> 
+                                    </Col>
                                 ))}
+                                </Row>
                             </div>
                         </Card.Body>
                     </Card> 
