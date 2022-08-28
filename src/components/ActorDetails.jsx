@@ -11,8 +11,9 @@ const ActorDetails = ({ data }) => {
             <h1 className='text-center'>{data.name}</h1>
 
             <Card className='mb-3'>
-                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${data.profile_path}`} alt="actor-poster" className='w-50 p-3' />
-
+                {data.profile_path && (
+                    <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${data.profile_path}`} className='w-50 p-3' />
+                )}
                 <Card.Body>
                     <div>
                         <div>Born: {data.birthday} </div>
@@ -33,7 +34,9 @@ const ActorDetails = ({ data }) => {
                             {data.credits.cast.map(movie => (
                                 <Col lg={3} md={4} sm={6} key={movie.id}>
                                     <Card className='mb-3'>
-                                        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt="movie-poster"/>
+                                        {movie.poster_path && (
+                                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
+                                        )}
                                         <Card.Body>
                                             <Card.Title>{movie.name}</Card.Title>
                                             <div>

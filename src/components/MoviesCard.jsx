@@ -12,12 +12,14 @@ const MoviesCard = ({ movies }) => {
                 {movies.results.map(movie => (
                     <Col lg={3} md={4} sm={6} key={movie.id}>
                         <Card className='mb-3'>
-                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt="movie-poster" />
+                            {movie.poster_path && (
+                                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
+                            )}
                             <Card.Body>
                                 <Card.Title>{movie.title}</Card.Title>
                                 <Card.Text>
-                                    <div>Released: {movie.release_date} </div>
-                                    <div>Average Rating: {movie.vote_average}</div>
+                                    <span>Released: {movie.release_date} </span>
+                                    <span>Average Rating: {movie.vote_average}</span>
                                 </Card.Text>
                                 <Button 
                                     as={Link}
@@ -29,9 +31,9 @@ const MoviesCard = ({ movies }) => {
                         </Card> 
                     </Col>
                 ))}
-                </Row>
+            </Row>
         </Container>
-  )
+    )
 }
 
 export default MoviesCard

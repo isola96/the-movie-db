@@ -10,28 +10,42 @@ const MovieDetails = ({ movie }) => {
         <Container>
             <h1 className='text-center'>{movie.title}</h1>
             <Card className='mb-3'>
-                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt="movie-poster" className='w-50 p-3' />
+                {movie.poster_path && (
+                    <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} className='w-50 p-3' />
+                )}
                 <Card.Body>
                         <div>
-                            <div>Released: {movie.release_date} </div>
-                        </div>
+                            <strong>Released: </strong>
+                        </div> 
+                        
+                        <span>{movie.release_date} </span>
+                    
                         <div>
-                            <div>Average rating: {movie.vote_average}</div>
-                        </div>
+                            <strong>Average rating: </strong>
+                        </div> 
+                        
+                        <span> {movie.vote_average}</span>
+                    
+                    
                         <div>
-                            <div>Overview: {movie.overview}</div>
-                        </div>
+                            <strong>Overview: </strong>
+                        </div> 
+
+                        <span> {movie.overview}</span>
+                        
                         <div>
                             <h3>Cast</h3>
                             <Row>
                                 {movie.credits.cast.map(actor => (
                                     <Col lg={3} md={4} sm={6} key={actor.id}>
                                         <Card className='mb-3'>
-                                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${actor.profile_path}`} alt="actor-poster" />
+                                            {actor.profile_path && (
+                                                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${actor.profile_path}`} />
+                                            )}
                                             <Card.Body>
                                                 <Card.Title>{actor.name}</Card.Title>
                                                 <Card.Text>
-                                                    <p>Plays: {actor.character} </p>
+                                                    <span>Plays: {actor.character} </span>
                                                 </Card.Text>
                                                 <Button
                                                     as={Link}
