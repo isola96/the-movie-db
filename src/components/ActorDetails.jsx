@@ -16,19 +16,19 @@ const ActorDetails = ({ data }) => {
                 )}
                 <Card.Body>
                     <div>
-                        <div>Born: {data.birthday} </div>
+                        <span><strong>Born: </strong>{data.birthday} </span>
                     </div>
 
                     <div>
-                        <div>In: {data.place_of_birth} </div>
+                        <span><strong>In: </strong>{data.place_of_birth} </span>
                     </div>
 
                     <div>
-                        <div>Biography: {data.biography}</div>
+                        <span><strong>Biography: </strong>{data.biography}</span>
                     </div>
 
                     <div>
-                        <h3>Filmography: </h3>
+                        <h3 className='mb-3 mt-3'>Filmography: </h3>
 
                         <Row>
                             {data.credits.cast.map(movie => (
@@ -38,13 +38,14 @@ const ActorDetails = ({ data }) => {
                                             <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
                                         )}
                                         <Card.Body>
-                                            <Card.Title>{movie.name}</Card.Title>
+                                            <Card.Title>{movie.title}</Card.Title>
+                                            
                                             <div>
-                                                <p>Released: {movie.release_date} </p>
+                                                <span><strong>Released: </strong> {movie.release_date} </span>
                                             </div>
 
                                             <div>
-                                                <p>Average rating: {movie.vote_average}</p>
+                                                <span><strong>Average rating: </strong> {movie.vote_average} </span>
                                             </div>
 
                                             <Button
