@@ -10,16 +10,16 @@ const MovieDetails = ({ movie }) => {
         <Container>
             <h1 className='text-center'>{movie.title}</h1>
             <Card className='mb-3'>
-                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt="movie-poster" />
+                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt="movie-poster" className='w-50 p-3' />
                 <Card.Body>
                         <div>
-                            <p>Released: {movie.release_date} </p>
+                            <div>Released: {movie.release_date} </div>
                         </div>
                         <div>
-                            <p>Average rating: {movie.vote_average}</p>
+                            <div>Average rating: {movie.vote_average}</div>
                         </div>
                         <div>
-                            <p>Overview: {movie.overview}</p>
+                            <div>Overview: {movie.overview}</div>
                         </div>
                         <div>
                             <h3>Cast</h3>

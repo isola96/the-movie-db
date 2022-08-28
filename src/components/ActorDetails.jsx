@@ -11,19 +11,19 @@ const ActorDetails = ({ data }) => {
             <h1 className='text-center'>{data.name}</h1>
 
             <Card className='mb-3'>
-                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${data.profile_path}`} alt="actor-poster" />
+                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${data.profile_path}`} alt="actor-poster" className='w-50 p-3' />
 
                 <Card.Body>
                     <div>
-                        <p>Born: {data.birthday} </p>
+                        <div>Born: {data.birthday} </div>
                     </div>
 
                     <div>
-                        <p>In: {data.place_of_birth} </p>
+                        <div>In: {data.place_of_birth} </div>
                     </div>
 
                     <div>
-                        <p>Biography: {data.biography}</p>
+                        <div>Biography: {data.biography}</div>
                     </div>
 
                     <div>
