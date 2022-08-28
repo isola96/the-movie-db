@@ -1,5 +1,5 @@
 import Container from 'react-bootstrap/Container'
-import MovieCard from '../components/MovieCard'
+import MoviesCard from '../components/MoviesCard'
 import { useQuery } from 'react-query'
 import { getNowPlaying } from '../services/TMDBAPI'
 
@@ -16,7 +16,7 @@ const NowPlayingPage = () => {
             
             {data && (
                 <>
-                    <MovieCard movies={data}/>
+                    <MoviesCard movies={data}/>
                 </>
             )}
         </Container>

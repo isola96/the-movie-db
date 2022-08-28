@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import {Link} from 'react-router-dom'
 
-const MovieCard = ({ movies }) => {
+const MoviesCard = ({ movies }) => {
     return (
         <Container>
             <Row>
@@ -34,4 +34,4 @@ const MovieCard = ({ movies }) => {
   )
 }
 
-export default MovieCard
+export default MoviesCard
