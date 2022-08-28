@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container'
 import { useParams, useSearchParams } from 'react-router-dom'
 import useGenre from '../hooks/useGenre'
-import MovieInfo from '../components/MovieInfo'
+import MoviesCard from '../components/MoviesCard'
 import Pagination from '../components/Pagination'
 
 const GenrePage = () => {
@@ -18,7 +18,7 @@ const GenrePage = () => {
             
             {data && (
                 <>
-                    <MovieInfo movies={data} /> 
+                    <MoviesCard movies={data} /> 
 
                     <Pagination page={page} changePage={setSearchParams} isPreviousData={isPreviousData}/>
                 </>
