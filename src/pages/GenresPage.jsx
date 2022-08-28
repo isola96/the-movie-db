@@ -25,9 +25,10 @@ const GenresPage = () => {
                     <Container>
                         <Row>
                             {data.genres.map(genre => (
-                                <Col key={genre.id}>
-                                    <Card className='mb-4 mt-4'>
-                                        <Card.Title className='text-center'>{genre.name}</Card.Title>
+                                <Col lg={3} md={4} sm={6} key={genre.id}>
+                                    <Card className='mb-4 mt-4 text-center'>
+                                        <Card.Title>{genre.name}</Card.Title>
+                                        
                                         <Card.Body>
                                             <Button
                                                 as={Link}
